@@ -1,11 +1,11 @@
 <?php
 
-namespace Sann4ez\Holiday\Drivers;
+namespace Sann4ez\Holidays\Drivers;
 
 use Illuminate\Support\Facades\Http;
-use Illuminate\Http\Client\Response;
+use Illuminate\Support\Facades\Response;
 
-class ApiNinjas extends \Sann4ez\Holiday\Contracts\CustomDriver
+class ApiNinjas extends \Sann4ez\Holidays\Contracts\CustomDriver
 {
     protected const BASE_URI = 'https://api.api-ninjas.com/v1/holidays';
 
@@ -23,11 +23,11 @@ class ApiNinjas extends \Sann4ez\Holiday\Contracts\CustomDriver
     protected function fetch(array $query = []): Response
     {
         $query = array_merge([
-            'country' => config('holiday.default_country'),
+            'country' => config('holidays.default_country'),
         ], $query);
 
         return Http::withHeaders([
-            'X-Api-Key' => config('holiday.apininjas.token'),
+            'X-Api-Key' => config('holidays.apininjas.token'),
         ])->get($this->getEndpoint(), $query);
     }
 

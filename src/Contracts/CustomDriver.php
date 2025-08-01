@@ -1,9 +1,8 @@
 <?php
 
-namespace Sann4ez\Holiday\Contracts;
+namespace Sann4ez\Holidays\Contracts;
 
-use Illuminate\Support\Collection;
-use Illuminate\Http\Client\Response;
+use Illuminate\Support\Facades\Response;
 
 /**
  * Абстрактний драйвер для розширення зовнішніх сервісів (Драйверів)

@@ -16,7 +16,7 @@ composer require sann4ez/laravel-holidays
 
 2️⃣ Publish the package resources:
 ```shell  
-php artisan vendor:publish --tag="holiday-config"
+php artisan vendor:publish --tag="holidays-config"
 ```
 
 This command publishes:
@@ -57,14 +57,15 @@ return [
 
 ### 📝 Get holidays for a year
 
-```php  
-use Sann4ez\Holiday\Facades\Holiday;
-
-$holidays = Holiday::get();
-``` 
-or
 ```php
-use Sann4ez\Holiday\Facades\Holiday;
+use Sann4ez\Holidays\Facades\Holidays;
 
-$holidays = Holiday::get(['country' => 'UA', 'year' => 2025], 'calendarific');
+$holidays = Holidays::get();
+```
+or
+
+```php
+use Sann4ez\Holidays\Facades\Holidays;
+
+$holidays = Holidays::get(['country' => 'UA', 'year' => 2025], 'calendarific');
 ```

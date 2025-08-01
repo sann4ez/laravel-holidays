@@ -1,11 +1,11 @@
 <?php
 
-namespace Sann4ez\Holiday\Facades;
+namespace Sann4ez\Holidays\Facades;
 
-use Sann4ez\Holiday\HolidayManager;
+use Sann4ez\Holidays\HolidayManager;
 use Illuminate\Support\Facades\Facade;
 
-class Holiday extends Facade
+class Holidays extends Facade
 {
     /**
      * Get the registered name of the component.

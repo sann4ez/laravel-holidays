@@ -1,5 +1,5 @@
 {
-  "name": "sann4ez/laravel-holiday",
+  "name": "sann4ez/laravel-holidays",
   "description": "Laravel package to get national and public holidays with multi-driver support",
   "keywords": [
     "laravel", "holidays", "calendar", "public holidays", "national holidays",
@@ -22,18 +22,18 @@
   },
   "autoload": {
     "psr-4": {
-      "Sann4ez\\Holiday\\": "src"
+      "Sann4ez\\Holidays\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Sann4ez\\Holiday\\Tests\\": "tests"
+      "Sann4ez\\Holidays\\Tests\\": "tests"
     }
   },
   "support": {
     "email": "sann4ez.dev@gmail.com",
-    "issues": "https://github.com/sann4ez/laravel-holiday/issues",
-    "source": "https://github.com/sann4ez/laravel-holiday"
+    "issues": "https://github.com/sann4ez/laravel-holidays/issues",
+    "source": "https://github.com/sann4ez/laravel-holidays"
   },
   "config": {
     "sort-packages": true
@@ -44,10 +44,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Sann4ez\\Holiday\\HolidayServiceProvider"
+        "Sann4ez\\Holidays\\HolidayServiceProvider"
       ],
       "aliases": {
-        "Holiday": "Sann4ez\\Holiday\\Facades\\Holiday"
+        "Holidays": "Holidays"
       }
     }
   }
