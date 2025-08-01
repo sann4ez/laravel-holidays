@@ -1,6 +1,6 @@
 <?php
 
-namespace Sann4ez\Holiday;
+namespace Sann4ez\Holidays;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -14,8 +14,8 @@ class HolidayServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/holiday.php' => config_path('holiday.php'),
-        ], 'holiday-config');
+            __DIR__.'/../config/holidays.php' => config_path('holidays.php'),
+        ], 'holidays-config');
     }
 
     /**
@@ -26,12 +26,12 @@ class HolidayServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/holiday.php',
-            'holiday'
+            __DIR__.'/../config/holidays.php',
+            'holidays'
         );
 
         $this->app->singleton(HolidayManager::class, function () {
-            return new HolidayManager($this->app);
+            return new HolidayManager();
         });
     }
 }

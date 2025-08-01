@@ -1,10 +1,8 @@
 <?php
 
-namespace Sann4ez\Holiday;
+namespace Sann4ez\Holidays;
 
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use Sann4ez\Holiday\Contracts\CustomDriver;
+use Sann4ez\Holidays\Contracts\CustomDriver;
 
 class HolidayManager
 {
@@ -15,7 +13,7 @@ class HolidayManager
      */
     public function get(array $query = [], string|null $driver = null): array
     {
-        $driver ??= config('holiday.driver', \Sann4ez\Holiday\Drivers\Calendarific::class);
+        $driver ??= config('holidays.driver', \Sann4ez\Holidays\Drivers\Calendarific::class);
         $driverClass = config("holiday.drivers.{$driver}");
 
         /** @var CustomDriver $driver */
