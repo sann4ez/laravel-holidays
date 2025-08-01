@@ -2,7 +2,7 @@
 
 namespace Sann4ez\Holidays\Contracts;
 
-use Illuminate\Support\Facades\Response;
+use Illuminate\Http\Client\Response;
 
 /**
  * Абстрактний драйвер для розширення зовнішніх сервісів (Драйверів)

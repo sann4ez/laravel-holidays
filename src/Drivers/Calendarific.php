@@ -2,8 +2,8 @@
 
 namespace Sann4ez\Holidays\Drivers;
 
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Response;
 
 class Calendarific extends \Sann4ez\Holidays\Contracts\CustomDriver
 {
