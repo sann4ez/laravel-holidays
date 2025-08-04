@@ -31,7 +31,7 @@ Here’s the default `config` file for reference:
 return [
     'default_country' => env('HOLIDAY_DEFAULT_COUNTRY', 'UA'),
 
-    'driver' => env('HOLIDAY_DRIVER', 'holidayapi'),
+    'driver' => env('HOLIDAY_DRIVER', 'calendarific'),
 
     'drivers' => [
         'calendarific' => \Sann4ez\Holiday\Drivers\Calendarific::class,
