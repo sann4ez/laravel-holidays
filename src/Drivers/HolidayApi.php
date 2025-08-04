@@ -3,7 +3,7 @@
 namespace Sann4ez\Holidays\Drivers;
 
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Response;
+use Illuminate\Http\Client\Response;
 
 class HolidayApi extends \Sann4ez\Holidays\Contracts\CustomDriver
 {

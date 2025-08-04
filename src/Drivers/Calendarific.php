@@ -2,8 +2,8 @@
 
 namespace Sann4ez\Holidays\Drivers;
 
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Response;
 
 class Calendarific extends \Sann4ez\Holidays\Contracts\CustomDriver
 {
@@ -23,7 +23,7 @@ class Calendarific extends \Sann4ez\Holidays\Contracts\CustomDriver
     protected function fetch(array $query = []): Response
     {
         $query = array_merge([
-            'api_key' => config('holidayss.calendarific.token'),
+            'api_key' => config('holidays.calendarific.token'),
             'country' => config('holidays.default_country'),
             'year' => now()->year,
         ], $query);
