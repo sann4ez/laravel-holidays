@@ -34,9 +34,10 @@ return [
     'driver' => env('HOLIDAY_DRIVER', 'calendarific'),
 
     'drivers' => [
-        'calendarific' => \Sann4ez\Holiday\Drivers\Calendarific::class,
-        'apininjas' => \Sann4ez\Holiday\Drivers\ApiNinjas::class,
-        'holidayapi' => \Sann4ez\Holiday\Drivers\HolidayApi::class,
+        'calendarific' => \Sann4ez\Holidays\Drivers\Calendarific::class,
+        'apininjas' => \Sann4ez\Holidays\Drivers\ApiNinjas::class,              // У безкоштовному плані не можна вказувати рік, по дефолту поточний
+        'holidayapi' => \Sann4ez\Holidays\Drivers\HolidayApi::class,            // Немає поточного року у безкоштовному плані
+        'elevenholidays' => \Sann4ez\Holidays\Drivers\ElevenHolidays::class,
     ],
 
     'calendarific' => [
@@ -49,6 +50,10 @@ return [
 
     'holidayapi' => [
         'token' => env('HOLIDAYAPI_TOKEN', ''),
+    ],
+
+    'elevenholidays' => [
+        'token' => env('ELEVENHOLIDAYS_TOKEN', ''),
     ],
 ];
 ```
