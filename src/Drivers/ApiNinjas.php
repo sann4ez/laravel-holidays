@@ -36,9 +36,9 @@ class ApiNinjas extends \Sann4ez\Holidays\Contracts\CustomDriver
      */
     protected function hydrate(array $items): array
     {
-        $holidays = $items['response']['holidays'] ?? $items;
+        $holidays = $items ?? [];
 
-        $formattedHolidays = array_map(function ($holiday) {
+        return array_map(function ($holiday) {
             return [
                 'name'          => $holiday['name'] ?? '',
                 'date'          => $holiday['date'] ?? '',
@@ -46,12 +46,5 @@ class ApiNinjas extends \Sann4ez\Holidays\Contracts\CustomDriver
                 'type'          => $holiday['type'] ?? '',
             ];
         }, $holidays);
-
-        return [
-            'options' => [
-                'driver' => 'apininjas',
-            ],
-            'holidays' => $formattedHolidays,
-        ];
     }
 }

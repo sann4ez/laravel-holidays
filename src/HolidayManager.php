@@ -14,7 +14,7 @@ class HolidayManager
     public function get(array $query = [], string|null $driver = null): array
     {
         $driver ??= config('holidays.driver', 'calendarific');
-        $driverClass = config("holiday.drivers.{$driver}", \Sann4ez\Holidays\Drivers\Calendarific::class);
+        $driverClass = config("holidays.drivers.{$driver}", \Sann4ez\Holidays\Drivers\Calendarific::class);
 
         /** @var CustomDriver $driver */
         $driver = app($driverClass);
