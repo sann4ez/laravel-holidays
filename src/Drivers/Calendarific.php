@@ -36,9 +36,9 @@ class Calendarific extends \Sann4ez\Holidays\Contracts\CustomDriver
      */
     protected function hydrate(array $items): array
     {
-        $holidays = $items['response']['holidays'] ?? $items;
+        $holidays = $items['response']['holidays'] ?? [];
 
-        $formattedHolidays = array_map(function ($holiday) {
+        return array_map(function ($holiday) {
             return [
                 'name'          => $holiday['name'] ?? '',
                 'date'          => $holiday['date']['iso'] ?? '',
@@ -46,12 +46,5 @@ class Calendarific extends \Sann4ez\Holidays\Contracts\CustomDriver
                 'type'          => $holiday['primary_type'] ?? '',
             ];
         }, $holidays);
-
-        return [
-            'options' => [
-                'driver' => 'calendarific',
-            ],
-            'holidays' => $formattedHolidays,
-        ];
     }
 }

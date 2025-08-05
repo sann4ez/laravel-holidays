@@ -2,12 +2,12 @@
 
 namespace Sann4ez\Holidays\Drivers;
 
-use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Client\Response;
+use Illuminate\Support\Facades\Http;
 
-class HolidayApi extends \Sann4ez\Holidays\Contracts\CustomDriver
+class ElevenHolidays extends \Sann4ez\Holidays\Contracts\CustomDriver
 {
-    const BASE_URI = 'https://holidayapi.com/v1/holidays';
+    protected const BASE_URI = 'https://api.11holidays.com/v1/holidays';
 
     /**
      * @inheritDoc
@@ -23,9 +23,7 @@ class HolidayApi extends \Sann4ez\Holidays\Contracts\CustomDriver
     protected function fetch(array $query = []): Response
     {
         $query = array_merge([
-            'key'   => config('holidays.holidayapi.token'),
             'country' => config('holidays.default_country'),
-            'year'  => now()->subYear()->year,
         ], $query);
 
         return Http::get($this->getEndpoint(), $query);
@@ -36,14 +34,14 @@ class HolidayApi extends \Sann4ez\Holidays\Contracts\CustomDriver
      */
     protected function hydrate(array $items): array
     {
-        $holidays = $items['holidays'] ?? [];
+        $holidays = $items ?? [];
 
         return array_map(function ($holiday) {
             return [
                 'name'          => $holiday['name'] ?? '',
                 'date'          => $holiday['date'] ?? '',
                 'country_code'  => $holiday['country'] ?? '',
-                'type'          => ($holiday['public'] ?? '') ? 'Public' : 'Observance',
+                'type'          => $holiday['type'] ?? '',
             ];
         }, $holidays);
     }

@@ -17,11 +17,32 @@ abstract class CustomDriver
      */
     public function getFormattedHolidays(array $query = []): array
     {
-        $response = $this->fetch($query);
+        try {
+            $response = $this->fetch($query);
+            $response->throw();
 
-        $data = $response->json() ?: [];
+            $data = $response->json() ?: [];
 
-        return $this->hydrate($data);
+            return [
+                'options'  => ['driver' => $this->getDriverName()],
+                'holidays' => $this->hydrate($data),
+            ];
+        } catch (\Throwable $e) {
+            return [
+                'options'  => ['driver' => $this->getDriverName()],
+                'holidays' => [],
+            ];
+        }
+    }
+
+    /**
+     * Отримання короткого імені драйвера
+     *
+     * @return string
+     */
+    protected function getDriverName(): string
+    {
+        return strtolower((new \ReflectionClass($this))->getShortName());
     }
 
     /**
