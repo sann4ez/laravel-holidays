@@ -29,7 +29,7 @@ abstract class CustomDriver
             ];
         } catch (\Throwable $e) {
             return [
-                'options'  => ['driver' => $this->getDriverName()],
+                'options'  => ['driver' => null],
                 'holidays' => [],
             ];
         }
@@ -46,7 +46,7 @@ abstract class CustomDriver
     }
 
     /**
-     * Повернути базовий URL або endpoint для HTTP-запиту
+     * Повернути endpoint для HTTP-запиту
      *
      * @return string                   Наприклад: 'https://api.example.com/v1/holidays'
      */
