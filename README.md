@@ -33,9 +33,6 @@ composer require sann4ez/laravel-holidays
 php artisan vendor:publish --tag="holidays-config"
 ```
 
-This command publishes:
-- Configuration file
-
 ### 🔧 Default Configuration
 
 Here’s the default `config` file for reference:
