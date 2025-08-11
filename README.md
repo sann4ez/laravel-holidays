@@ -4,20 +4,10 @@
 Laravel package to get holidays with multi-driver support
 </p>
 
-<p align="center">
-  <a href="https://packagist.org/packages/sann4ez/laravel-holidays">
-    <img src="https://img.shields.io/packagist/l/sann4ez/laravel-holidays.svg?style=for-the-badge" alt="License">
-  </a>
-  <a href="https://github.com/sann4ez/laravel-holidays">
-    <img src="https://img.shields.io/github/stars/sann4ez/laravel-holidays.svg?style=for-the-badge" alt="Stars">
-  </a>
-  <a href="https://packagist.org/packages/sann4ez/laravel-holidays">
-    <img src="https://img.shields.io/packagist/v/sann4ez/laravel-holidays.svg?style=for-the-badge" alt="Latest Stable Version">
-  </a>
-  <a href="https://packagist.org/packages/sann4ez/laravel-holidays">
-    <img src="https://img.shields.io/packagist/dt/sann4ez/laravel-holidays.svg?style=for-the-badge" alt="Total Downloads">
-  </a>
-</p>
+[![License](https://img.shields.io/packagist/l/sann4ez/laravel-holidays.svg?style=for-the-badge)](https://packagist.org/packages/sann4ez/laravel-holidays)
+[![GitHub Stars](https://img.shields.io/github/stars/sann4ez/laravel-holidays.svg?style=for-the-badge)](https://github.com/sann4ez/laravel-holidays)
+[![Latest Stable Version](https://img.shields.io/packagist/v/sann4ez/laravel-holidays.svg?style=for-the-badge)](https://packagist.org/packages/sann4ez/laravel-holidays)
+[![Total Downloads](https://img.shields.io/packagist/dt/sann4ez/laravel-holidays.svg?style=for-the-badge)](https://packagist.org/packages/sann4ez/laravel-holidays)
 
 ---
 
