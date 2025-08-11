@@ -1,11 +1,17 @@
-# Laravel Holidays
+<h1 align="center">Laravel Holidays</h1>
 
+<p align="center">
 Laravel package to get holidays with multi-driver support
+</p>
 
+<p align="center">
 [![License](https://img.shields.io/packagist/l/sann4ez/laravel-holidays.svg?style=for-the-badge)](https://packagist.org/packages/sann4ez/laravel-holidays)
 [![GitHub Stars](https://img.shields.io/github/stars/sann4ez/laravel-holidays.svg?style=for-the-badge)](https://github.com/sann4ez/laravel-holidays)
 [![Latest Stable Version](https://img.shields.io/packagist/v/sann4ez/laravel-holidays.svg?style=for-the-badge)](https://packagist.org/packages/sann4ez/laravel-holidays)
 [![Total Downloads](https://img.shields.io/packagist/dt/sann4ez/laravel-holidays.svg?style=for-the-badge)](https://packagist.org/packages/sann4ez/laravel-holidays)
+</p>
+
+---
 
 ## Installation
 
@@ -73,4 +79,24 @@ or
 use Sann4ez\Holidays\Facades\Holidays;
 
 $holidays = Holidays::get(['country' => 'UA', 'year' => 2025], 'calendarific');
+```
+
+
+### 🧐 Check if a date is a holiday or weekend
+
+```php
+use Carbon\Carbon;
+use Sann4ez\Holidays\Facades\Holidays;
+
+// Check only holidays
+$isHoliday = Holidays::is(Carbon::parse('2025-01-07'));
+
+// Check holidays and weekends
+$isHolidayOrWeekend = Holidays::is(Carbon::parse('2025-01-05'), weekend: true);
+
+// With specific driver
+$isHoliday = Holidays::is(Carbon::parse('2025-01-07'), drivers: 'calendarific');
+
+// With multiple drivers (fallback logic)
+$isHoliday = Holidays::is(Carbon::parse('2025-01-07'), drivers: ['calendarific', 'holidayapi']);
 ```

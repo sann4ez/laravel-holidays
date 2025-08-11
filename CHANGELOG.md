@@ -1,6 +1,11 @@
  
 # Changelog
 
+## 1.2.0 - 2025-08-11
+- Add new method `is` in `HolidayManager`
+- Update method `get` in `HolidayManager`
+- Update `CHANGELOG.md` and `README.md`
+
 ## 1.1.1 - 2025-08-05
 - Update CHANGELOG and README
 
